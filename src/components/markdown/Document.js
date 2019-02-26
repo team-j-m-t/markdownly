@@ -16,6 +16,9 @@ export default class Document extends PureComponent {
     const { markdown } = this.state;
     return (
       <>
+      <button> Document 1 </button> 
+      <button> Document 2 </button> 
+      <button> Document 3 </button> 
         <div className={styles.Document}>
           <Editor markdown={markdown} updateMarkdown={this.updateMarkdown} />
           <Preview markdown={markdown} />
