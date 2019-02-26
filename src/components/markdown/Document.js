@@ -23,6 +23,7 @@ export default class Document extends PureComponent {
           <Editor markdown={markdown} updateMarkdown={this.updateMarkdown} />
           <Preview markdown={markdown} />
         </div>
+          <button>Delete Document</button> 
       </>
     );
   }
