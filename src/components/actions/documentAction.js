@@ -4,4 +4,3 @@ export const createDocument = markdown => ({
   type: CREATE_DOCUMENT,
   payload:  markdown 
 });
-
