@@ -26,6 +26,10 @@ export default class Document extends PureComponent {
       this.setState({ markdown });
     });
   }
+  
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
 
   render() {
     const { markdown } = this.state;
