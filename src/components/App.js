@@ -1,5 +1,5 @@
 import React from 'react';
-import Document from './markdown/Document';
+import Document from './containers/CreateDoc';
 
 export default function App() {
   return (

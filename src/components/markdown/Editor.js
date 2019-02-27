@@ -4,13 +4,13 @@ import styles from './Editor.css';
 
 function Editor({ markdown, updateMarkdown }) {
   return (
-    <textarea className={styles.Editor} value={markdown} onChange={updateMarkdown} />
+    <textarea className={styles.Editor}  onChange={updateMarkdown} value={markdown}/>
   );
 }
 
 Editor.propTypes = {
-  markdown: PropTypes.string.isRequired,
-  updateMarkdown: PropTypes.func.isRequired
+  updateMarkdown: PropTypes.func.isRequired,
+  markdown: PropTypes.string.isRequired
 };
 
 export default Editor;

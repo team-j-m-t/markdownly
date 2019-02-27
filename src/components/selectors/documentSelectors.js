@@ -1,1 +1,1 @@
-export const getDocument = state => state.document.name;
+export const getDocument = state => state.document;
