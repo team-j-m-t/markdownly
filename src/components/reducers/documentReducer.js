@@ -1,5 +1,5 @@
 import { 
-  CREATE_DOCUMENT
+  UPDATE_DOCUMENT
 } from '../actions/documentAction';
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
-    case CREATE_DOCUMENT:
+    case UPDATE_DOCUMENT:
       return {
         markdown: action.payload
       };
