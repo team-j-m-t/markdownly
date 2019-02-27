@@ -1,8 +1,10 @@
+import { 
+  CREATE_DOCUMENT,
+} from '../actions/documentAction';
+
 const initialState = {
   document: [{ name: 'document', markdown: 'Sup there' }]
 };
-
-const CREATE_DOCUMENT = 'CREATE_DOCUMENT';
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
