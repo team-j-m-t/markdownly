@@ -11,8 +11,8 @@ export default class Document extends PureComponent {
     markdown: ''
   };
 
-  updateMarkdown = ({ target }) => {
-    store.dispatch(createDocument(target.value));
+  handleChange = ({ target }) => {
+    store.dispatch(createDocument[target.name](target.value));
   };
 
   componentDidMount() {
@@ -22,13 +22,14 @@ export default class Document extends PureComponent {
   }
 
   render() {
+    const { markdown } = this.state;
     return (
       <>
       <button> Document 1 </button> 
       <button> Document 2 </button> 
       <button> Document 3 </button> 
         <div className={styles.Document}>
-          <Editor updateMarkdown={this.updateMarkdown} markdown={this.state.markdown} />
+          <Editor markdown={markdown} onChange={this.handleChange} name={markdown}  />
           <Preview markdown={this.state.markdown}/>
         </div>
           <button>Delete Document</button> 
