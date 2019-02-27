@@ -1,5 +1,5 @@
 import React from 'react';
-import Document from './containers/CreateDoc';
+import CreateDoc from './containers/CreateDoc';
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
         <button> Add Document </button>
       </div>
       <h1>Markdown Editor</h1>
-      <Document />
+      <CreateDoc />
     </>
   );
 }
