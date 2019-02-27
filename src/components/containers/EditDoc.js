@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import store from '../../store';
-import Editor from '../markdown/Editor';
-import Preview from '../markdown/Preview';
+import Editor from '../presentational/Editor';
+import Preview from '../presentational/Preview';
 import styles from './EditDoc.css';
 import { updateDocument } from '../actions/documentAction';
 import { getDocument } from '../selectors/documentSelectors';
@@ -34,10 +34,12 @@ export default class Document extends PureComponent {
   render() {
     const { markdown } = this.state;
     return (
-      <div className={styles.Document}>
-        <Editor markdown={markdown} onChange={this.handleChange} value={markdown} />
-        <Preview markdown={markdown}/>
-      </div>
+      <>
+        <div className={styles.Document}>
+          <Editor markdown={markdown} onChange={this.handleChange} value={markdown} />
+          <Preview markdown={markdown}/>
+        </div>
+      </>
     );
   }
 }
