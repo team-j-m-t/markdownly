@@ -1,1 +1,1 @@
-export const getDocument = state => state.document;
+export const getDocument = state => state.markdown;

@@ -12,13 +12,19 @@ export default class Document extends PureComponent {
   };
 
   handleChange = ({ target }) => {
-    store.dispatch(createDocument[target.name](target.value));
+    const factoryCreate = {
+      markdown: createDocument
+    };
+  
+    store.dispatch(factoryCreate[target.name](target.value));
   };
 
   componentDidMount() {
-    const reduxState = store.getState();
-    const markdown = getDocument(reduxState);
-    this.setState({ markdown });
+    this.unsubscribe = store.subscribe(() => {
+      const reduxState = store.getState();
+      const markdown = getDocument(reduxState);
+      this.setState({ markdown });
+    });
   }
 
   render() {
@@ -29,8 +35,8 @@ export default class Document extends PureComponent {
       <button> Document 2 </button> 
       <button> Document 3 </button> 
         <div className={styles.Document}>
-          <Editor markdown={markdown} onChange={this.handleChange} name={markdown}  />
-          <Preview markdown={this.state.markdown}/>
+          <Editor markdown={markdown} onChange={this.handleChange} value={markdown} />
+          <Preview markdown={markdown}/>
         </div>
           <button>Delete Document</button> 
       </>
