@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import store from '../../store';
 import Editor from '../markdown/Editor';
 import Preview from '../markdown/Preview';
-import styles from '../markdown/EditDoc.css';
+import styles from './EditDoc.css';
 import { updateDocument } from '../actions/documentAction';
 import { getDocument } from '../selectors/documentSelectors';
 
