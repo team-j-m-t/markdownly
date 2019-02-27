@@ -7,7 +7,6 @@ export default function App() {
       <div>
         <label> Title of Document</label>
         <input type="text"></input>
-        <button> Add Document </button>
       </div>
       <h1>Markdown Editor</h1>
       <EditDoc />
