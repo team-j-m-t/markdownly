@@ -3,7 +3,7 @@ import store from '../../store';
 import Editor from '../markdown/Editor';
 import Preview from '../markdown/Preview';
 import styles from '../markdown/Document.css';
-import { createDocument } from '../actions/documentAction';
+import { updateDocument } from '../actions/documentAction';
 import { getDocument } from '../selectors/documentSelectors';
 
 export default class Document extends PureComponent {
@@ -13,7 +13,7 @@ export default class Document extends PureComponent {
 
   handleChange = ({ target }) => {
     const factoryCreate = {
-      markdown: createDocument
+      markdown: updateDocument
     };
   
     store.dispatch(factoryCreate[target.name](target.value));
@@ -26,7 +26,7 @@ export default class Document extends PureComponent {
       this.setState({ markdown });
     });
   }
-  
+
   componentWillUnmount() {
     this.unsubscribe();
   }
