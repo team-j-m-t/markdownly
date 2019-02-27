@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import marked from 'marked';
 import styles from 'github-markdown-css/github-markdown.css';
 
@@ -11,3 +11,7 @@ export default function Preview({ markdown }){
 
   );
 }
+
+Preview.propTypes = {
+  markdown: PropTypes.string.isRequired
+};
