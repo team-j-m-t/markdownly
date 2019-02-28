@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Document from './EditDoc';
+import Document from '../presentational/Document';
 import { getDocument } from '../selectors/documentSelectors';
 import { updateDocument } from '../actions/documentAction';
 

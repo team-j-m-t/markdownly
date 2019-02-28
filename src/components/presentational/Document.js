@@ -1,7 +1,7 @@
 import React from 'react';
-import Editor from '../presentational/Editor';
-import Preview from '../presentational/Preview';
-import styles from './EditDoc.css';
+import Editor from './Editor';
+import Preview from './Preview';
+import styles from './Document.css';
 import PropTypes from 'prop-types';
 
 function Document({ markdown, onChange }){
