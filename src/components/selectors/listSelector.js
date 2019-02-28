@@ -1,4 +1,1 @@
-export const getList = state => {
-  console.log('stateSelector', state.markdownList.markdowns);
-  return state.markdownList.markdowns;
-};
+export const getList = state => state.markdownList.markdowns;

@@ -8,7 +8,6 @@ const mapStateProps = state => ({
   list: getList(state),
   markdown: getDocument(state) });
 
-
 const mapDispatchProps = (dispatch) => ({
   onClick(markdown, event) {
     event.preventDefault();

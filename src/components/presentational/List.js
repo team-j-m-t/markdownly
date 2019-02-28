@@ -5,6 +5,7 @@ function List({ list, onClick, markdown }) {
   const listOfDocs = list.map(doc=> {
     return <li key={list}>{doc}</li>;
   });
+  
   return (
     <>
     <button onClick={onClick.bind(null, markdown)}>ADD</button>

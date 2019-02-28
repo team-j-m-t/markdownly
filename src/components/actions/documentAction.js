@@ -4,4 +4,3 @@ export const updateDocument = markdown => ({
   type: UPDATE_DOCUMENT,
   payload:  markdown 
 });
-
