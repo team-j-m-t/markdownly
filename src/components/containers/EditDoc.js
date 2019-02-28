@@ -1,45 +1,23 @@
-import React, { PureComponent } from 'react';
-import store from '../../store';
+import React from 'react';
 import Editor from '../presentational/Editor';
 import Preview from '../presentational/Preview';
 import styles from './EditDoc.css';
-import { updateDocument } from '../actions/documentAction';
-import { getDocument } from '../selectors/documentSelectors';
+import PropTypes from 'prop-types';
 
-export default class Document extends PureComponent {
-  state = {
-    markdown: ''
-  };
-
-  handleChange = ({ target }) => {
-    const factoryCreate = {
-      markdown: updateDocument
-    };
-  
-    store.dispatch(factoryCreate[target.name](target.value));
-  };
-
-  componentDidMount() {
-    this.unsubscribe = store.subscribe(() => {
-      const reduxState = store.getState();
-      const markdown = getDocument(reduxState);
-      this.setState({ markdown });
-    });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  render() {
-    const { markdown } = this.state;
-    return (
+function Document({ markdown, onChange }){
+  return (
       <>
         <div className={styles.Document}>
-          <Editor markdown={markdown} onChange={this.handleChange} value={markdown} />
+          <Editor markdown={markdown} onChange={onChange} value={markdown} />
           <Preview markdown={markdown}/>
         </div>
       </>
-    );
-  }
+  );
 }
+
+Document.propTypes = {
+  markdown: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
+
+export default Document;

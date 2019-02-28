@@ -1,1 +1,4 @@
-export const getDocument = state => state.markdown.markdown;
+export const getDocument = state => {
+  console.log(state, 'state');
+  return state.markdown.markdown;
+};
