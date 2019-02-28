@@ -3,10 +3,11 @@ import { getDocument } from './documentSelectors';
 describe('selector test', () => {
   it('can test a document selector', () => {
     const state = {
-      markdown: 'doggo'
+      markdown: {
+        markdown: 'cat'
+      } 
     };
-    
     const selectedMarkdown = getDocument(state);
-    expect(selectedMarkdown).toEqual('doggo');
+    expect(selectedMarkdown).toEqual('cat');
   });
 });

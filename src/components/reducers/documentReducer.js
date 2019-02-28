@@ -3,7 +3,7 @@ import {
 } from '../actions/documentAction';
 
 const initialState = {
-  markdown: '' 
+  markdown: ''
 };
 
 export default function reducer(state = initialState, action) {
