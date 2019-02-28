@@ -8,7 +8,7 @@ export default function reducer(state = initialState, action) {
   switch(action.type) {
     case ADD_MARKDOWN:
       return {
-        markdowns: [...state.markdownList, action.payload]
+        markdowns: [...state.markdowns, action.payload]
       };
     default: 
       return state;

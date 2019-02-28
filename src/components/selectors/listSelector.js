@@ -1,4 +1,4 @@
 export const getList = state => {
-  console.log('rturn', state);
+  console.log('stateSelector', state.markdownList.markdowns);
   return state.markdownList.markdowns;
 };

@@ -8,7 +8,6 @@ export default function Preview({ markdown }){
   const __html = marked(markdown);
   return (
     <div className={styles['markdown-body']} dangerouslySetInnerHTML={{ __html }}></div>
-
   );
 }
 
