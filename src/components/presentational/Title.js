@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Title({ title, onChange }) {
+function Title({ title, onChange, onSubmit }) {
   return (
     <>
-      <form>
+      <form onSubmit={onSubmit}>
         <label> Add Document Title </label>
         <input type="text" name="title" value={title} onChange={onChange} />
-        <button> Submit</button>
+        <button>Submit</button>
       </form>
     </>
   );
@@ -15,8 +15,8 @@ function Title({ title, onChange }) {
 
 Title.propTypes = {
   title: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func
 };
 
 export default Title;
-

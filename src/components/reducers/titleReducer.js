@@ -12,6 +12,7 @@ export default function reducer(state = initialState, action) {
       return {
         title: action.payload
       };
+    
     default: 
       return state;
   }
